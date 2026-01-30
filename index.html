@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+                <style></style>
+            </head>
+            <body>
+                
+
+    <meta charset="UTF-8">
+    <title> 歌詞金句</title>
+
+    
+        <center>
+            <h1> ✨歌詞金句✨ </h1>
+            <img src="https://shop.line-scdn.net/themeshop/v1/products/fb/f7/1c/fbf71c4f-9cd5-477a-acfb-1b0f231ebefd/168/WEBSTORE/icon_198x278.png" width="30%"><br>
+            <button onclick="buddha()"> 🌟隨機金句🌟 </button>
+            <p id="goodluck">這天水圍城，圍住理想，哪怕再荒涼，我也要闖。</p>
+
+        </center>    
+        
+    
+
+                <script>var verses=[
+    "時間樂隊，成長伴侶。",
+    "命運就算顛沛流離，命運就算恐嚇著你，做個好漢子，每天要自強。",
+    "這天水圍城，圍住理想，哪怕再荒涼，我也要闖。",
+    "若果花落誰家，這答案你可會記掛。"
+]
+
+
+function buddha(){
+    var random = parseInt(Math.random() * 4);
+    document.getElementById("goodluck").innerText=verses[random];
+}
+</script>
+            
+        
+    </body>
