@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+                <style></style>
+            </head>
+            <body>
+                
+
+    
+        <meta charset="UTF-8">
+
+        <title>My 1st Mini Test 第一個小測試網站 </title>
+    
+    
+        <h3> 謎語小測試</h3>
+        Q1. 什麼水果視力最差?<br>
+        <input type="radio" name="q1" id="ans1">草莓
+        <input type="radio" name="q1" id="ans2">蘋果
+        <input type="radio" name="q1" id="ans3">芒果
+        <button onclick="question1()"> Submit </button>
+        <p id="results1"></p>
+        Q2. 狼來了 猜水果？<br>
+        <input type="radio" name="q2" id="ans4">香蕉
+        <input type="radio" name="q2" id="ans5">橙子
+        <input type="radio" name="q2" id="ans6">楊桃
+        <button onclick="question2()">Submit</button>
+        <p id="results2"> Correct! 好聰明！🎉</p>
+        Q3. 蜘蛛結網 猜食物？<br>
+        <input type="radio" name="q3" id="ans7">麵包
+        <input type="radio" name="q3" id="ans8">漢堡
+        <input type="radio" name="q3" id="ans9">吐司
+        <button onclick="question3()">Submit</button>
+        <p id="results3">Oppps! 錯了❌</p>
+
+
+
+
+
+
+    
+
+                <script>function question1(){
+    var ans1 = document.getElementById("ans1");
+    var ans2 = document.getElementById("ans2");
+    var ans3 = document. getElementById("ans3");
+
+    if (ans3.checked){
+        document.getElementById("results1").
+        innerText=" Correct! 好聰明！🎉";
+
+    }else if (ans1.checked || ans2.checked){
+        document.getElementById("results1").
+        innerText= "Oppps! 錯了❌";
+    }
+
+}
+function question2(){
+    var ans4 = document.getElementById("ans4");
+    var ans5 = document.getElementById("ans5");
+    var ans6 = document. getElementById("ans6");
+
+    if (ans6.checked){
+        document.getElementById("results2").
+        innerText=" Correct! 好聰明！🎉";
+
+    }else if (ans4.checked || ans5.checked){
+        document.getElementById("results2").
+        innerText= "Oppps! 錯了❌";
+    }
+}
+function question3(){
+    var ans7 = document.getElementById("ans7");
+    var ans8 = document.getElementById("ans8");
+    var ans9 = document.getElementById("ans9");
+
+    if (ans9.checked){
+        document.getElementById("results3").
+        innerText=" Correct! 好聰明！🎉";
+
+    }else if (ans7.checked || ans8.checked){
+        document.getElementById("results3").
+        innerText= "Oppps! 錯了❌";
+    }
+
+}
+</script>
+            
+        
+    </body>
