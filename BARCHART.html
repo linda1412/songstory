@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+                <style></style>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Inter:wght@400;600;700;900&amp;display=swap"><style id="bcr-global-styles">
+.bcr-root{position:relative;overflow:hidden;border-radius:20px;font-family:'Inter',system-ui,sans-serif}
+.bcr-root *{box-sizing:border-box;margin:0;padding:0}
+.bcr-dark{background:#080818;color:#e0e0f0}
+.bcr-light{background:#f0f2f8;color:#1a1a2e}
+.bcr-particles{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.bcr-confetti-layer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:5;overflow:hidden}
+.bcr-confetti{position:absolute;border-radius:2px}
+@keyframes bcr-cfall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(120vh) rotate(720deg) scale(0.15)}}
+.bcr-inner{position:relative;z-index:1;padding:28px 28px 20px}
+.bcr-header{text-align:center;margin-bottom:4px}
+.bcr-title{font-family:'Orbitron',monospace,sans-serif;font-size:clamp(1rem,3vw,1.35rem);font-weight:900;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(90deg,#00d4ff,#7b2ffc,#ff2d95);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bcr-light .bcr-title{background:linear-gradient(90deg,#0055bb,#6600cc,#cc0055);-webkit-background-clip:text;background-clip:text}
+.bcr-subtitle{font-size:0.78rem;opacity:0.35;margin-top:2px}
+.bcr-label-wrap{text-align:center;margin:8px 0 2px;user-select:none;position:relative}
+.bcr-label-main{font-family:'Orbitron',monospace;font-size:clamp(2.8rem,10vw,4.8rem);font-weight:900;line-height:1;opacity:0.1;transition:transform 0.2s cubic-bezier(.4,2,.6,1)}
+.bcr-label-main.bcr-pop{transform:scale(1.07)}
+.bcr-label-sub{font-family:'Orbitron',monospace;font-size:clamp(0.65rem,2vw,0.88rem);letter-spacing:3px;color:#00d4ff;margin-top:-2px;min-height:1.2em}
+.bcr-light .bcr-label-sub{color:#0055bb}
+.bcr-progress-wrap{width:55%;max-width:280px;height:3px;margin:10px auto 14px;border-radius:3px;overflow:hidden}
+.bcr-dark .bcr-progress-wrap{background:rgba(255,255,255,0.05)}
+.bcr-light .bcr-progress-wrap{background:rgba(0,0,0,0.07)}
+.bcr-progress-fill{height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#00d4ff,#7b2ffc,#ff2d95);box-shadow:0 0 8px rgba(0,212,255,0.5);transition:width 0.12s linear}
+.bcr-chart{position:relative;overflow:hidden;transition:height 0.4s}
+.bcr-row{display:flex;align-items:center;position:absolute;width:100%;left:0;will-change:transform,opacity;transition:transform 0.55s cubic-bezier(.22,1,.36,1),opacity 0.35s}
+.bcr-rank{width:28px;min-width:28px;text-align:center;font-family:'Orbitron',monospace;font-size:0.62rem;font-weight:700;opacity:0.25}
+.bcr-icon{width:30px;height:30px;min-width:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.68rem;font-weight:900;color:#fff;margin-right:8px;position:relative;flex-shrink:0;text-shadow:0 1px 2px rgba(0,0,0,0.4)}
+.bcr-crown::after{content:'👑';position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:11px;animation:bcr-bounce .75s ease infinite}
+@keyframes bcr-bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-3px)}}
+.bcr-name{width:72px;min-width:72px;font-size:0.76rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0}
+.bcr-track{flex:1;position:relative;min-width:0}
+.bcr-fill{height:100%;border-radius:4px 8px 8px 4px;position:relative;overflow:hidden;will-change:width;min-width:2px}
+.bcr-fill::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.12) 50%,transparent 100%);animation:bcr-shimmer 2.2s infinite}
+@keyframes bcr-shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.bcr-glow{position:absolute;right:0;top:0;width:24px;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2));border-radius:0 8px 8px 0}
+.bcr-val{min-width:56px;text-align:right;font-family:'Orbitron',monospace;font-size:0.68rem;font-weight:700;opacity:0.65;padding-left:6px}
+.bcr-change{width:24px;min-width:24px;text-align:center;font-size:0.62rem;font-weight:700}
+.bcr-up{color:#00ff88}.bcr-down{color:#ff4466}.bcr-same{opacity:0.2}
+.bcr-controls{display:flex;gap:8px;justify-content:center;align-items:center;margin-top:16px;flex-wrap:wrap}
+.bcr-btn{padding:9px 22px;border:none;border-radius:10px;font-size:0.82rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;outline:none}
+.bcr-btn:active{transform:scale(.96)}
+.bcr-btn-play{background:linear-gradient(135deg,#00d4ff,#7b2ffc);color:#fff;box-shadow:0 4px 18px rgba(0,212,255,.3)}
+.bcr-btn-play:hover{box-shadow:0 6px 28px rgba(0,212,255,.5);transform:translateY(-1px)}
+.bcr-btn-play.bcr-active{background:linear-gradient(135deg,#ff2d95,#7b2ffc);box-shadow:0 4px 18px rgba(255,45,149,.3)}
+.bcr-btn-reset{color:#999}
+.bcr-dark .bcr-btn-reset{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.bcr-light .bcr-btn-reset{background:rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.1);color:#666}
+.bcr-btn-reset:hover{opacity:.8}
+.bcr-select{padding:8px 12px;border-radius:10px;font-size:.78rem;font-family:'Inter',sans-serif;outline:none;cursor:pointer}
+.bcr-dark .bcr-select{background:rgba(255,255,255,.06);color:#bbb;border:1px solid rgba(255,255,255,.08)}
+.bcr-light .bcr-select{background:#fff;color:#333;border:1px solid rgba(0,0,0,.1)}
+@media(max-width:600px){
+  .bcr-inner{padding:14px 10px 12px}
+  .bcr-name{width:48px;min-width:48px;font-size:.65rem}
+  .bcr-icon{width:24px;height:24px;min-width:24px;font-size:.58rem;margin-right:5px}
+  .bcr-rank{width:22px;min-width:22px;font-size:.55rem}
+  .bcr-val{min-width:42px;font-size:.6rem}
+  .bcr-change{width:18px;min-width:18px;font-size:.55rem}
+}</style></head>
+            <body>
+                
+    
+        <meta charset="UTF-8">
+        <script src="https://digimarketingai.github.io/bar-chart-race/BarChartRace.js"></script>
+    
+    
+        <div id="race"><div class="bcr-root bcr-dark"><canvas class="bcr-particles" width="406" height="627"></canvas><div class="bcr-confetti-layer"></div><div class="bcr-inner"><div class="bcr-header"><div class="bcr-title">SMARTPHONE</div></div><div class="bcr-label-wrap"><div class="bcr-label-main">2017</div><div class="bcr-label-sub"></div></div><div class="bcr-progress-wrap"><div class="bcr-progress-fill" style="width: 0%;"></div></div><div class="bcr-chart" style="height: 440px;"><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(88px);"><div class="bcr-rank">#3</div><div class="bcr-icon" style="background: rgb(247, 124, 1);">AP</div><div class="bcr-name" title="Apple">Apple</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(247, 124, 1, 0.8), rgb(247, 124, 1)); box-shadow: rgba(247, 124, 1, 0.3) 0px 0px 14px; width: 78.29%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">274</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(352px);"><div class="bcr-rank">#9</div><div class="bcr-icon" style="background: rgb(131, 205, 32);">ON</div><div class="bcr-name" title="Oneplus">Oneplus</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(131, 205, 32, 0.8), rgb(131, 205, 32)); box-shadow: rgba(131, 205, 32, 0.3) 0px 0px 14px; width: 28.57%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">100</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(0px);"><div class="bcr-rank">#1</div><div class="bcr-icon bcr-crown" style="background: rgb(187, 14, 68);">OP</div><div class="bcr-name" title="OPPO">OPPO</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(187, 14, 68, 0.8), rgb(187, 14, 68)); box-shadow: rgba(187, 14, 68, 0.3) 0px 0px 14px; width: 100%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">350</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(132px);"><div class="bcr-rank">#4</div><div class="bcr-icon" style="background: rgb(232, 51, 46);">NO</div><div class="bcr-name" title="NOKIA">NOKIA</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(232, 51, 46, 0.8), rgb(232, 51, 46)); box-shadow: rgba(232, 51, 46, 0.3) 0px 0px 14px; width: 73.14%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">256</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(264px);"><div class="bcr-rank">#7</div><div class="bcr-icon" style="background: rgb(255, 255, 0);">XI</div><div class="bcr-name" title="XIAOMI">XIAOMI</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(255, 255, 0, 0.8), rgb(255, 255, 0)); box-shadow: rgba(255, 255, 0, 0.3) 0px 0px 14px; width: 42.86%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">150</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(176px);"><div class="bcr-rank">#5</div><div class="bcr-icon" style="background: rgb(21, 132, 102);">SA</div><div class="bcr-name" title="SAMSUNG">SAMSUNG</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(21, 132, 102, 0.8), rgb(21, 132, 102)); box-shadow: rgba(21, 132, 102, 0.3) 0px 0px 14px; width: 73.14%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">256</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(220px);"><div class="bcr-rank">#6</div><div class="bcr-icon" style="background: rgb(129, 212, 26);">HO</div><div class="bcr-name" title="HONOR">HONOR</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(129, 212, 26, 0.8), rgb(129, 212, 26)); box-shadow: rgba(129, 212, 26, 0.3) 0px 0px 14px; width: 66.86%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">234</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(396px);"><div class="bcr-rank">#10</div><div class="bcr-icon" style="background: rgb(224, 117, 10);">VI</div><div class="bcr-name" title="VIVO">VIVO</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(224, 117, 10, 0.8), rgb(224, 117, 10)); box-shadow: rgba(224, 117, 10, 0.3) 0px 0px 14px; width: 28.57%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">100</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(308px);"><div class="bcr-rank">#8</div><div class="bcr-icon" style="background: rgb(81, 111, 141);">SO</div><div class="bcr-name" title="SONG">SONG</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(81, 111, 141, 0.8), rgb(81, 111, 141)); box-shadow: rgba(81, 111, 141, 0.3) 0px 0px 14px; width: 35.71%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">125</div><div class="bcr-change bcr-same">—</div></div><div class="bcr-row" style="height: 44px; opacity: 1; transform: translateY(44px);"><div class="bcr-rank">#2</div><div class="bcr-icon" style="background: rgb(85, 48, 141);">HU</div><div class="bcr-name" title="HUAWEI">HUAWEI</div><div class="bcr-track" style="height: 30px;"><div class="bcr-fill" style="background: linear-gradient(90deg, rgba(85, 48, 141, 0.8), rgb(85, 48, 141)); box-shadow: rgba(85, 48, 141, 0.3) 0px 0px 14px; width: 92.86%;"><div class="bcr-glow"></div></div></div><div class="bcr-val">325</div><div class="bcr-change bcr-same">—</div></div></div><div class="bcr-controls"><button class="bcr-btn bcr-btn-play">▶  PLAY</button><button class="bcr-btn bcr-btn-reset">↺  RESET</button><select class="bcr-select"><option value="1000">🐢 Slow</option><option value="500">⚡ Normal</option><option value="250">🔥 Fast</option><option value="100">💥 Insane</option></select></div></div></div>        
+    
+
+
+                <script></script>
+            
+        
+    </div></body>
